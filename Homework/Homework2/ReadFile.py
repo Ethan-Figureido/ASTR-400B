@@ -10,10 +10,16 @@ import numpy as np
 import astropy.units as u
 
 def Read(filename):
-  #This function takes a filename (text file) as an input, opens and reads the file.
-  #The file data is then extracted and returned as three variables: time,
-  #total particles, and a data variable that includes data for positions, velocities
-  #masses, and particle types for each particle. 
+  """ This function will open and read out a given data file and returns the time,
+      total number of particles as variables, and returns particle info as a data array
+      
+      Input: filename is the name of the given data file
+      
+      Outputs: time (astropy units Myr) is the time
+               total_part is the total number of particles in the data file
+               data is an array including the following data for each particle in
+                 the data file: particle type, mass, x, y, z, vx, vy, and vz
+  """
 
   file = open(filename,'r') #open the file
 
