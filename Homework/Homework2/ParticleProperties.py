@@ -12,14 +12,21 @@ import astropy.units as u
 
 
 def ParticleInfo(filename, particle_type, particle_number):
-    #takes a filename, particle type and particle number as inputs
-    #and returns the magnitude of the distance in kpc, magnitude of
-    #the particle velocity in km/s, and the mass in solar masses.
-    #particle number is the specific particle being considered, filename
-    #is the name of the data file, and particle type is the type of particle
-    #being considered (1,2, or 3)=(dark matter, disk stars, bulge stars).
-    #distance and velocity are calculated as follows d = sqrt(x^2 + y^2 + z^2)
-    #mass is extracted directly from the file
+    """This function will compute and return position, velocity, and mass data for a 
+       user selected particle.
+       Inputs: filename is the name of the data file the information
+                   is being retrieved from
+               particle_type is the type of particle being considered. It
+                   accepts the following values: 1 = dark matter, 2 = disk stars
+                   3 = bulge stars
+                particle_number is the index of the particle selected for data retreival
+
+       Outputs: velocity (astropy units km/s) is the calculated magnitude of the particle's velocity
+                   measured from coordinate system at center of Milky Way
+                distance (astropy units kpc) is the calculated magnitude of the distance of the particle
+                    from the MW's center of mass
+                mass (astropy units solar masses) is the mass of the particle
+    """
     
     #extract file data
     time,total_part,data = Read(filename)
