@@ -33,7 +33,8 @@ def ComponentMass(filename,p_type):
     
     return total_mass
     
-    
+#all of the following code is for creating a table for the requested values
+#and exporting it
 #creating table of mass data for 3 input files
 
 #calculating total mass of each galaxy
